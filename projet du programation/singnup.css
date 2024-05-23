@@ -1,0 +1,82 @@
+body {
+    font-family: 'Abel', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f4f4f4;
+    background-image: url('https://i.pinimg.com/564x/95/0a/a8/950aa8ec9a374b7762ce892c29b1a262.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #f4a8c6; /* Ensuring that text color is consistent */
+  }
+  
+  .signup-container {
+    background-color: rgba(227, 140, 237, 0.9); /* Light blue with higher opacity for better readability */
+    padding: 20px 30px; /* Added more padding for better spacing */
+    border-radius: 10px; /* Slightly larger border radius for softer look */
+    box-shadow: 0 4px 15px rgba(215, 142, 198, 0.2); /* Enhanced shadow for better contrast */
+    width: 350px; /* Adjusted width for better form spacing */
+  }
+  
+  .signup-container h1 {
+    margin-bottom: 20px;
+    font-size: 28px; /* Slightly larger font size for the title */
+    text-align: center;
+    color: #e77aa7; /* Matching the button hover color */
+  }
+  
+  .signup-container label {
+    display: block;
+    margin-bottom: 8px; /* Increased margin for better spacing */
+    font-weight: bold;
+    color: #e563cb; /* Matching the title color */
+  }
+  
+  .signup-container input {
+    width: 100%;
+    padding: 12px; /* Slightly larger padding for better usability */
+    margin-bottom: 15px; /* Increased margin for better spacing */
+    border: 1px solid #ccc; /* Subtle border color for modern look */
+    border-radius: 5px; /* Slightly larger border radius */
+    background-color: rgba(255, 255, 255, 0.9); /* Slightly opaque input background */
+    font-size: 16px; /* Consistent font size for better readability */
+    color: #333; /* Ensuring text color is consistent */
+  }
+  
+  .signup-container input::placeholder {
+    color: #aaa; /* Lighter placeholder color for better UX */
+  }
+  
+  .signup-container button {
+    width: 100%;
+    padding: 12px; /* Slightly larger padding for better usability */
+    background-color: #f571c0;
+    color: white;
+    border: none;
+    border-radius: 5px; /* Consistent border radius */
+    cursor: pointer;
+    font-size: 18px; /* Slightly larger font size for the button */
+    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+  }
+  
+  .signup-container button:hover {
+    background-color: #f590d5;
+  }
+  
+  .signup-container p {
+    text-align: center;
+    margin-top: 15px; /* Added margin for better spacing */
+    color: #333; /* Ensuring text color is consistent */
+  }
+  
+  .signup-container p a {
+    color: #dd7fca;
+    text-decoration: none;
+    font-weight: bold; /* Bold links for better emphasis */
+  }
+  
+  .signup-container p a:hover {
+    text-decoration: underline;
+  }

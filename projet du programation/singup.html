@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Up</title>
+  <link rel="stylesheet" href="singnup.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&family=Forum&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="signup-container">
+    <h1>Sign Up</h1>
+    <form id="loginForm" action="submit_signup" method="POST">
+      <label for="username">Username:</label>
+      <input type="text" id="username" name="username" placeholder="Enter your username" required>
+
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" placeholder="Enter your password" required>
+      <span id="showPassword" class="bx bx-show"></span>
+
+      <label for="confirm-password">Confirm Password:</label>
+      <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirm your password" required>
+
+      <button type="submit">Sign Up</button>
+    </form>
+    <p>Already have an account? <a href="login.html">Login here</a>.</p>
+  </div>
+
+  <script>
+    // Array of users
+    const users = [
+        { username: 'ali el', password: 'ali123456' },
+        { username: 'amine ze', password: '12345678' }
+    ];
+
+    // Login form submission event
+    document.getElementById('loginForm').addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent form from submitting normally
+
+        // Get input values
+        const username = document.getElementById('username').value;
+        const password = document.getElementById('password').value;
+        const confirmPassword = document.getElementById('confirm-password').value;
+
+        // Check if passwords match
+        if (password !== confirmPassword) {
+            alert('Passwords do not match');
+            return;
+        }
+
+        // Check if user already exists
+        const userExists = users.some(user => user.username === username);
+
+        if (userExists) {
+            alert('Username already taken');
+            return;
+        }
+
+        // Add new user
+        users.push({ username, password });
+        alert('Sign up successful! Redirecting to login page...');
+
+        // Redirect to login page
+        window.location.href = 'login.html';
+    });
+
+    // Show password function
+    document.getElementById('showPassword').addEventListener('click', function() {
+        const passwordInput = document.getElementById('password');
+        if (passwordInput.type === 'password') {
+            passwordInput.type = 'text';
+            this.classList.remove('bx-show');
+            this.classList.add('bx-hide');
+        } else {
+            passwordInput.type = 'password';
+            this.classList.remove('bx-hide');
+            this.classList.add('bx-show');
+        }
+    });
+
+    // Sélection du champ de formulaire d'utilisateur (correction)
+    const usernameInput = document.getElementById('username');
+
+    // Ajout d'un écouteur d'événements pour détecter les changements dans le champ de formulaire
+    usernameInput.addEventListener('input', () => {
+        // Récupération de la valeur entrée par l'utilisateur
+        const username = usernameInput.value;
+
+        // Affichage de la valeur dans la console
+        console.log('Utilisateur entré :', username);
+    });
+  </script>
+</body>
+</html>
